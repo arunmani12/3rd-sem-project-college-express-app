@@ -1,0 +1,43 @@
+table td{
+    text-align: justify;
+}
+
+table td span{
+    color: green;
+}
+
+.table-aligh table td {
+    text-align: center;
+}
+
+.table-aligh{
+    margin-top: 30px;
+}
+#page-5{
+    background-color: #E6F7FF;
+}
+
+#page-5 div{
+    width: 100%;
+    margin-top: 30px;
+}
+
+#page-5 div h4{
+    margin-left: 15px;
+}
+
+#page-5 div p{
+    margin-left: 15px;
+}
+
+#page-5 div ul{
+    list-style-type: none;
+}
+
+.allign{
+    margin-top: 20px;
+}
+
+.allign p{
+    margin-top: 15px;
+}

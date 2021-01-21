@@ -1,0 +1,51 @@
+<% layout('layouts/boiler')%>
+<style>
+    .dep{
+       width: 400px;
+       background-color: #f8f8f8;
+       margin: 20px auto;
+       padding: 10px;
+    }
+   .dep ul li ul li {
+       margin-left: 10px;
+   }
+   .dep ul{
+       margin-left: 30px;
+   }
+   .dep ul a{
+       text-decoration: none;
+   }
+   .dep a:hover{
+       color: cyan;
+   }
+   @media all and (max-width: 968px) {
+    .dep{
+       width: 100%;
+       background-color: #f8f8f8;
+       margin: 20px auto;
+       padding: 10px;
+    }
+   }
+</style>
+<h1 style="text-align: center; margin-top: 20px;">DEPARTMENTS</h1>
+<div class="dep">
+<ul>
+    <li><a style="color: black;"href="#">PG</a>
+        <ul>
+            <li><a href="/departments/pg/computerscience">Computer science</a></li>
+            <li><a href="/departments/pg/chemical">Chemical</a></li>
+            <li><a href="/departments/pg/civil">civil</a></li>
+            <li><a href="/departments/pg/Electrical-and-electronics">Electrical and electronics</a></li>
+            <li><a href="/departments/pg/electronics-and-communication">electronics and communication</a></li>
+            <li><a href="/departments/pg/Information-technology">Information technology</a></li>
+            <li><a href="/departments/pg/Mechanical">Mechanical</a></li>
+        </ul>
+    </li>
+    <li><a style="color: black;"href="#">UG</a>
+        <ul>
+            <li><a href="#">MCA</a></li>
+        </ul>
+    </li>
+    <li><a style="color: black;"href="#">humanity and sciencs</a></li>
+</ul>
+</div>

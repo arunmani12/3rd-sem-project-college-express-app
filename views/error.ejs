@@ -1,0 +1,29 @@
+<% layout('layouts/boiler')%>
+<style>
+  .err{
+      display: flex;
+      flex-direction: column;
+      width: 600px;
+      margin: 40px auto;
+      background-color:  #f8d7da;
+      /* overflow-y: scroll; */
+      padding: 2rem;
+      border: 1px solid #ff97a0;
+   }
+   .err p{
+       /* width: 400px; */
+       font-size: 12px;
+   }
+   @media(max-width: 693px){
+       .err{
+           width: 100%;
+           overflow-x: scroll;
+       }
+   }
+</style>
+<div class="err">
+<h2><%=err.message%></h2>
+<% if(process.env.NODE_ENV !=='production') { %> 
+<p><%= err.stack %></p>
+<% } %> 
+</div>

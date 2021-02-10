@@ -41,3 +41,25 @@ table td span{
 .allign p{
     margin-top: 15px;
 }
+
+@media all and (max-width: 968px) {
+    scroll-page {
+        padding: 2px;
+      }
+      table th, table td {
+        font-size: 8px;
+      }
+}
+
+.fas{
+    margin-left: 5px;
+    color: #3366ff;
+  }
+
+  label {
+	color: #5d5dff;
+}
+
+
+
+

@@ -2,7 +2,6 @@
 *{
   margin: 0;
   padding: 0;
-  user-select: none;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
@@ -20,7 +19,7 @@ nav:after{
 nav .logo{
   float: left;
   color: white;
-  font-size: 27px;
+  /* font-size: px; */
   font-weight: 600;
   line-height: 70px;
   padding-left: 60px;
@@ -175,8 +174,14 @@ header{
   margin:3% 1.6%;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-.cont:hover{
-  transform: translatey(-0.25em);
+.cont:nth-child(1){
+  animation: move-in-bottom 1s ease-in;
+}
+.cont:nth-child(2){
+  animation: move-in-bottom 1s ease-in;
+}
+.cont:nth-child(3){
+  animation: move-in-bottom 1s ease-in;
 }
 div h3{
   text-align: center;
@@ -247,6 +252,7 @@ footer div{
 } 
 footer div p1{
  color:white;
+ font-size: 12px;
 }
 footer div p1 a{
   text-decoration: none;
@@ -492,6 +498,13 @@ footer div p1 a{
   justify-content: space-around;
 }
 
+#logo{
+  top: 0;
+  position: absolute;
+  width: 180px;
+  left: 0;
+}
+
 @media(max-width:976px){
   .style-btn{
     flex-direction: column;
@@ -499,8 +512,80 @@ footer div p1 a{
   .style-btn div{
     width: 100%;
   }
-  .style-btn div:nth-child(1)
+  .style-btn div
   {
     margin-bottom: 10px;
   }
+
+  footer div p1 {
+    margin: 15px 20px;
+    font-size: 12px;
+  }
+  #logo{
+    left: -30px;
+    width: 120px;
+  }
 }
+
+@media(max-width:434px){
+  .custom-btn{
+    font-size: 10px;
+  }
+}
+
+.far{
+  margin-left: 5px;
+  color: #3366ff;
+}
+
+.cont:hover .far{
+  color: rgb(223, 32, 32);
+}
+
+
+
+
+@keyframes move-in-left {
+  0%{
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  80%{
+    transform: translateX(10px);
+  }
+
+  100%{
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+
+
+@keyframes move-in-right {
+    0%{
+      opacity: 0;
+      transform: translateX(100px);
+    }
+  
+    80%{
+      transform: translateX(-10px);
+    }
+  
+    100%{
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  @keyframes move-in-bottom {
+    0%{
+      opacity: 0;
+      transform: translatey(100px);
+    }
+    100%{
+      opacity: 1;
+      transform: translatey(0);
+    }
+  } 

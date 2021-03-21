@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <div class="testnav">
+        <a href="/showAlumni">Alumni</a>
+        <% if(!currentUser) {%> 
+        <a href="/register">Register</a>
+        <a href="/login">Login</a>
+        <% }else{ %> 
+        <a href="/logout">Logout</a>
+        <% } %>
+    </div> 
+    <% if(success && success.length) {%>
+    <div class="alert alert-success alert-dismissible fade show-3">
+        <button type="button" class="close" >
+            <p1><%= success %></p1>
+            <span class="thistoclick">&times;</span>
+        </button>
+    </div>
+    <% } %>
+
+    <% if(error && error.length) {%>
+        <div class="alert alert-success alert-dismissible fade show-4">
+            <button type="button" class="close" >
+                <p1><%= error %></p1>
+                <span class="thistoclick">&times;</span>
+            </button>
+        </div>
+        <% } %>
+        <%- body %>
+</body>
+<script>
+    let close = document.getElementsByClassName('thistoclick')[0];
+    let removeel= document.getElementsByClassName('alert-dismissible')[0];
+    close.addEventListener('click',()=>{
+      removeel.remove();
+    })
+</script>
+</html>

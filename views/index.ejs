@@ -1,3 +1,4 @@
+<!-- <link rel="stylesheet" href="/style/style4.css"> -->
 <% layout('layouts/boiler')%>
    
 <div class="container">
@@ -13,7 +14,27 @@
 <li>Indoor Stadium established at the cost of Rs. 92 Lakhs.</li>
 </ul>
 </div>
-<div class="cont">
+
+  <%  if( !currentUser)  {%>
+    <div class="cont">
+  <div class="jform-2">
+    <form action="/login" method="POST">
+      <h4 style="color: blue;">Login to Alumni</h4>
+        <label for="jform_name">Name of the Alumni</label>
+        <input type="text" name="username" id="jform_name"   required aria-required="true"/>
+
+        <label for="jform_password">Password</label>
+        <input type="password" name="password" id="jform_password"   required aria-required="true" />
+        
+        <button>Submit</button>
+    <a href="/register" class="createnew">create account</a>
+
+    </form>
+    
+</div>
+
+
+  <div>
   <h3>Placement Statistics<i class="far fa-bookmark"></i></h3>
   <ul>
     <li>Placement Details as on 10.03.2020</li>
@@ -21,12 +42,31 @@
     <li>Our recruiters in the academic year 2019-20</li>
     <li>* - Placement is in Progress.</li>
   </ul>
+  </div>
+  </div>
+  <% } %>
+  
+  <%  if( currentUser)  {%>
+  <div class="cont contlogic">
+    <h3>Placement Statistics<i class="far fa-bookmark"></i></h3>
+  <ul>
+    <li>Placement Details as on 10.03.2020</li>
+    <li>Placement Statistics for the past 3 academic years</li>
+    <li>Our recruiters in the academic year 2019-20</li>
+    <li>* - Placement is in Progress.</li>
+  </ul>
 </div>
+  <% } %>
+
 <div class="cont">
   <h3>Latest News<i class="far fa-bookmark"></i></h3>
   <ul>
-    <li id="eee">New computing facility</li>
-    <li id="mmm"> New computing facility created at the cost of Rs. 23,45,000 ...</li>
+    <li id="eee"><a href="#">New computing facility</a></li>
+    <li id="eee"><a href="#">Fit india movement @ammec</a></li>
+    <li id="eee"><a href="#">AICTE Pragati and Saksham Schemes</a></li>
+    <li id="eee"><a href="#">AAMEC Bird's Eye view</a></li>
+    <!-- <li id="mmm"> New computing facility created at the cost of Rs. 23,45,000 ...</li> -->
+    <li id="eee"><a href="#">Covid19 Pandemic -UGC Public Notice</a></li>
   </ul>
 </div>
 </div>

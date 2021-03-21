@@ -1,0 +1,48 @@
+<link rel="stylesheet" href="/style/style4.css">
+<% layout('layouts/boiler')%>
+
+<div class="testnav">
+    <a href="/showAlumni">Alumni</a>
+    <% if(!currentUser) {%> 
+    <a href="/register">Register</a>
+    <a href="/login">Login</a>
+    <% }else{ %> 
+    <a href="/logout">Logout</a>
+    <% } %>
+</div> 
+<% if(success && success.length) {%>
+<div class="alert alert-success alert-dismissible fade show-3">
+    <button type="button" class="close" >
+        <p1><%= success %></p1>
+        <span class="thistoclick">&times;</span>
+    </button>
+</div>
+<% } %>
+
+<% if(error && error.length) {%>
+    <div class="alert alert-success alert-dismissible fade show-4">
+        <button type="button" class="close" >
+            <p1><%= error %></p1>
+            <span class="thistoclick">&times;</span>
+        </button>
+    </div>
+    <% } %>
+
+
+
+
+    <div class="showname">
+    <h1><%=jForm.name%> </h1>
+    <h5><%=jForm.email%></h5>
+    <h5><%=jForm.pro_Degree%></h5>
+    <h5><%=jForm.pro_pro_WorkPlace%></h5>
+    <h5><%=jForm.pro_pro_SpecialAchievements%></h5>
+
+    <%  if( currentUser && currentUser._id.equals(jForm._id))  {%>
+    <form action="/showAlumni/<%=jForm._id%>?_method=DELETE" method="POST">
+        <button>Delete</button>
+    </form>
+    <a href="/showAlumni/<%=jForm._id%>/Edit">edit</a>
+    <% } %>
+    <a href="/showAlumni">Back</a>
+    </div>

@@ -1,0 +1,42 @@
+<link rel="stylesheet" href="/style/style4.css">
+<% layout('layouts/boiler')%>
+
+<div class="testnav">
+    <a href="/showAlumni">Alumni</a>
+    <% if(!currentUser) {%> 
+    <a href="/register">Register</a>
+    <a href="/login">Login</a>
+    <% }else{ %> 
+    <a href="/logout">Logout</a>
+    <% } %>
+</div> 
+<% if(success && success.length) {%>
+<div class="alert alert-success alert-dismissible fade show-3">
+    <button type="button" class="close" >
+        <p1><%= success %></p1>
+        <span class="thistoclick">&times;</span>
+    </button>
+</div>
+<% } %>
+
+<% if(error && error.length) {%>
+    <div class="alert  alert-dismissible fade show-4">
+        <button type="button" class="close" >
+            <p1><%= error %></p1>
+            <span class="thistoclick">&times;</span>
+        </button>
+    </div>
+    <% } %>
+
+
+<div class="jform">
+    <form action="/login" method="POST">
+        <label for="jform_name">Name of the Alumni</label>
+        <input type="text" name="username" id="jform_name"   required aria-required="true"/>
+
+        <label for="jform_password">Password</label>
+        <input type="password" name="password" id="jform_password"   required aria-required="true" />
+        
+        <button>Submit</button>
+    </form>
+</div>

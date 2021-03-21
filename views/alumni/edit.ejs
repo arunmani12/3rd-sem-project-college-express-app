@@ -1,0 +1,163 @@
+<link rel="stylesheet" href="/style/style4.css">
+<% layout('layouts/boiler')%>
+
+
+<div class="testnav">
+    <a href="/showAlumni">Alumni</a>
+    <% if(!currentUser) {%> 
+    <a href="/register">Register</a>
+    <a href="/login">Login</a>
+    <% }else{ %> 
+    <a href="/logout">Logout</a>
+    <% } %>
+</div> 
+<% if(success && success.length) {%>
+<div class="alert alert-success alert-dismissible fade show-3">
+    <button type="button" class="close" >
+        <p1><%= success %></p1>
+        <span class="thistoclick">&times;</span>
+    </button>
+</div>
+<% } %>
+
+<% if(error && error.length) {%>
+    <div class="alert alert-success alert-dismissible fade show-4">
+        <button type="button" class="close" >
+            <p1><%= error %></p1>
+            <span class="thistoclick">&times;</span>
+        </button>
+    </div>
+    <% } %>
+
+
+
+    <div class="jform">
+
+    <form action="/showAlumni/<%=jForm._id%>?_method=PUT" method="POST">
+        <label for="jform_name">Name of the Alumni</label>
+        <input type="text" name="jform[name]" id="jform_name"   required aria-required="true" value="<%=jForm.name%> " />
+
+
+        
+       
+
+        <label for="jform_pro_DateofBirth">Date of Birth</label>
+        <input type="date"  name="jform[pro_DateofBirth]" id="jform_pro_DateofBirth"  required aria-required="true">
+
+
+        <label for="jform_pro_Degree" >Degree</label>
+        <select id="jform_pro_Degree" name="jform[pro_Degree]"  required aria-required="true">
+            <option value="BE">BE</option>
+            <option value="MCA">MCA</option>
+            <option value="B.Tech">B.Tech</option>
+        </select>
+
+        <label  for="jform_pro_BranchofStudies">Branch of Study</label>
+        <select id="jform_pro_BranchofStudies" name="jform[pro_BranchofStudies]"  required
+            aria-required="true">
+            <option value="Chemical Engineering">Chemical Engineering</option>
+            <option value="Computer Science Engineering">Computer Science Engineering</option>
+            <option value="Electrical and Communication  Engineering">Electrical and Communication Engineering
+            </option>
+            <option value="Electrical and Electronics  Engineering">Electrical and Electronics Engineering</option>
+            <option value="Information Technology">Information Technology</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Computer Application">Computer Application</option>
+        </select>
+    
+
+
+        <label for="jform_pro_BranchofStudy">Year of Completion</label>
+        <select id="jform_pro_BranchofStudy" name="jform[pro_BranchofStudy]"  required
+            aria-required="true">
+            <option value="1990 - 1991">1990</option>
+            <option value="1991">1991</option>
+            <option value="1992">1992</option>
+            <option value="1993">1993</option>
+            <option value="1994">1994</option>
+            <option value="1995">1995</option>
+            <option value="1996">1996</option>
+            <option value="1997">1997</option>
+            <option value="1998">1998</option>
+            <option value="1999">1999</option>
+            <option value="2000">2000</option>
+            <option value="2001">2001</option>
+            <option value="2002">2002</option>
+            <option value="2003">2003</option>
+            <option value="2004">2004</option>
+            <option value="2005">2005</option>
+            <option value="2006">2006</option>
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+        </select>
+
+
+
+
+    <label for="jform_pro_pro_EmploymentType" >Employment Type</label>
+
+        <select id="jform_pro_pro_EmploymentType" name="jform[pro_pro_EmploymentType]" >
+            <option value="Salaried">Salaried</option>
+            <option value="Entrepreneur">Entrepreneur</option>
+            <option value="House Maker">House Maker</option>
+            <option value="Yet to be Placed">Yet to be Placed</option>
+        </select>
+
+
+
+
+    <label for="jform_pro_pro_PresentEmployer">Present Employer</label>
+    <input type="text" name="jform[pro_pro_PresentEmployer]" id="jform_pro_pro_PresentEmployer" value="<%=jForm.pro_pro_PresentEmployer%> "/>
+   
+
+    <label for="jform_pro_pro_Designation">Designation</label>
+    <input type="text" name="jform[pro_pro_Designation]" id="jform_pro_pro_Designation" value="<%=jForm.pro_pro_Designation%> "/>
+
+
+
+
+    <label for="jform_pro_pro_WorkPlace">Work Place</label>
+    <input type="text" name="jform[pro_pro_WorkPlace]" id="jform_pro_pro_WorkPlace" value="<%=jForm.pro_pro_WorkPlace%> "/>
+
+
+
+
+    <label for="jform_pro_pro_SpecialAchievements">Special Achievements</label>
+    <textarea name="jform[pro_pro_SpecialAchievements]" id="jform_pro_pro_SpecialAchievements"><%=jForm.pro_pro_SpecialAchievements%></textarea>
+
+
+
+
+   <label for="jform_pro_pro_Phone1Office">Phone 1(Office)</label>
+   <input type="number" name="jform[pro_pro_Phone1Office]" id="jform_pro_pro_Phone1Office" value="<%=jForm.pro_pro_Phone1Office%>"/>
+
+
+   
+   <label for="jform_pro_pro_Phone2Office">Phone 2(home)</label>
+   <input type="number" name="jform[pro_pro_Phone2Office]" id="jform_pro_pro_Phone2Office" value="<%=jForm.pro_pro_Phone2Office%>"/>
+
+   
+
+
+
+
+    <label for="jform_pro_pro_Mobile">Mobile</label>
+    <input type="text" name="jform[pro_pro_Mobile]" id="jform_pro_pro_Mobile" value="<%=jForm.pro_pro_Mobile%>"/>
+
+
+
+
+    <label for="jform_pro_pro_ContactAddress">Contact Address</label>
+    <textarea name="jform[pro_pro_ContactAddress]" id="jform_pro_pro_ContactAddress"  required aria-required="true" ><%=jForm.pro_pro_ContactAddress%></textarea>
+    <button>submit</button>
+    </form>
+    </div>

@@ -21,7 +21,7 @@ const MongoDBStore=require('connect-mongo')
 let jform=require('./models/jform');
 const { isLoggedin,isAuthor,validatejform,validatejform2 }=require('./middleware');
 const DbConnect=process.env.DBCONNECT;
-// 'mongodb://localhost:27017/AmmecClg'
+// const localdb = 'mongodb://localhost:27017/AmmecClg'
 mongoose.connect(DbConnect, {
     useNewUrlParser: true,
     useCreateIndex: true,

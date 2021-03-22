@@ -41,6 +41,8 @@
     line-height: 1.5;
 }
 
+
+
 .showname h1{
     text-transform: uppercase;
     font-size: 32px;
@@ -111,6 +113,21 @@ label{
     margin: 30px auto;
 }
 
+@media all and (max-width: 968px) {
+    .alumnishow{
+      width: 90%;
+    }
+    .showname{
+        width: 90%;
+    }
+    .jform{
+        width: 90%;
+    }
+    .jform input{
+        border: 1px solid grey;
+    }
+}
+
 .jform input,.jform label{
     width: 100%;
 }
@@ -143,11 +160,7 @@ label{
     border:1px solid rgb(42, 245, 42);
 }
 
-.show-3 button{
-    background-color:rgba(96, 241, 96, 0.835);
-    border:1px solid rgba(96, 241, 96, 0.835);
-    font-size: 24px;
-}
+
 .show-4{
     position: relative;
     width: 99%;
@@ -158,12 +171,8 @@ label{
     border:1px solid rgb(245, 42, 42);
 }
 
-.show-4 button{
-    background-color:rgba(241, 96, 96, 0.835);
-    border:1px solid rgba(241, 96, 96, 0.835);
-    font-size: 24px;
-}
-.show-3 span{
+
+.show-3 span,.show-4 span{
     position: absolute;
     top: 2px;
     left: 96%;
